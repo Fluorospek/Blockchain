@@ -1,5 +1,6 @@
 const { Module } = require("module");
 const sha = require("sha256");
+const currentNodeUrl = process.argv[3];
 
 class Blockchain {
   constructor() {
@@ -7,6 +8,8 @@ class Blockchain {
     this.chain = [];
     //contains all the pending transactions
     this.pendingTransactions = [];
+    this.currenNodeUrl = currentNodeUrl;
+    this.networkNodes = [];
 
     Blockchain.prototype.createNewBlock = (nonce, previousBlockHash, hash) => {
       const newBlock = {
@@ -26,7 +29,7 @@ class Blockchain {
     };
 
     Blockchain.prototype.getLastBlock = () => {
-      return [this.chain.length - 1];
+      return this.chain[this.chain.length - 1];
     };
 
     Blockchain.prototype.createNewTransaction = (amount, sender, recipient) => {

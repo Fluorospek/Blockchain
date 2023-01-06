@@ -5,13 +5,20 @@
   "main": "blockchain.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --watch dev -e js dev/api.js"
+    "node_1": "nodemon --watch dev -e js dev/networkNode.js 5001 http://localhost:5001",
+    "node_2": "nodemon --watch dev -e js dev/networkNode.js 5002 http://localhost:5002",
+    "node_3": "nodemon --watch dev -e js dev/networkNode.js 5003 http://localhost:5003",
+    "node_4": "nodemon --watch dev -e js dev/networkNode.js 5004 http://localhost:5004",
+    "node_5": "nodemon --watch dev -e js dev/networkNode.js 5005 http://localhost:5005"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.20.1",
     "express": "^4.18.2",
-    "sha256": "^0.2.0"
+    "request": "^2.88.2",
+    "request-promise": "^4.2.6",
+    "sha256": "^0.2.0",
+    "uuid": "^9.0.0"
   }
 }
